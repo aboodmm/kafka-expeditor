@@ -1,5 +1,12 @@
+##########################
+## Sample configuration ##
+##########################
+
+# Change topic names and input directories accordingly
+
 fakker:
     broker: localhost:9092
+    kafkadir: ~/kafka_2.13-3.5.1
 
 topics:
     test-topic-1:
