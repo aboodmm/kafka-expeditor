@@ -13,6 +13,3 @@ topics:
     ./testdir1
   test-topic-2:
     ./testdir2
-  test-topic-3:
-    ./testdir3
-
