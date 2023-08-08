@@ -32,17 +32,22 @@ def validate_configs():
 def connect_kafka_producer():
     return KafkaProducer(bootstrap_servers=['localhost:9092'], api_version=(0, 10))
 
+def try_create_topic(producer, topics):
+    try:
+        producer.create_topics(new_topics=topics, validate_only=False)
+    except Exception as err:
+        logging.error("Error while creating topic {err}")
+    
 def post_to_kafka(producer):
     topics_dict = fakker_config.get("topics")
+    try_create_topic(producer, topics_dict.keys())
     for topic,dir in topics_dict.items():
         for curfile in glob.glob(dir + "/*"):
             with open(curfile, "r") as file:
                 output_key = str(uuid.uuid1())
                 key_bytes = bytes(output_key, encoding="utf-8")
                 value_bytes = bytes(file.read(), encoding="utf-8")
-                producer.send(k, key=key_bytes, value=value_bytes)
-        print("test")
-
+                producer.send(topic, key=key_bytes, value=value_bytes)
 
 if (__name__ == "__main__"):
     init_logger()
