@@ -1,6 +1,5 @@
 # fakker
-Eliminate the extremely painful labor of posting to kafka for manual testing
-
+Testing tool to ease the developer into posting messages to kafka from a directory and a configured set of topics.
 
 ### Startup
 
