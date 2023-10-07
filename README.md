@@ -1,12 +1,19 @@
 # fakker
-Eliminate the extremely painful labor of posting to kafka for manual testing
+Testing tool to ease the developer into posting messages to kafka from a directory and a configured set of topics.
 
+This is intended to be used on a local machine to aid in the initial stages of development.
 
-### Configuration
+### Startup
 
-add the following to your login script
+Grab a Docker compose yaml that includes Kafka and Zookeeper.
 
 ```
-alias zookup='<path_to_kafka>/bin/zookeeper-server-start.sh <path_to_kafka>/config/zookeeper.properties'
-alias kafkaup='<path_to_kafka>/bin/kafka-server-start.sh <path_to_kafka>/config/server.properties'
+% docker-compose up
 ```
+
+```
+python3 fakker.py
+```
+Executes the program and posts the messages to the configured topics
+
+![image](https://github.com/aboodmm/fakker/assets/2085511/d060d7f5-f6a2-4d2e-b248-17c4b7742620)
