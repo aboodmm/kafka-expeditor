@@ -1,4 +1,4 @@
-# fakker
+# kafka-expeditor
 Testing tool to ease the developer into posting messages to kafka from a directory and a configured set of topics.
 
 This is intended to be used on a local machine to aid in the initial stages of development.
