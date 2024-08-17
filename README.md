@@ -3,6 +3,8 @@ Testing tool to ease the developer into posting messages to kafka from a directo
 
 This is intended to be used on a local machine to aid in the initial stages of development.
 
+# This project parses your yaml config for the configured topics and posts the messages from your configured directories
+
 ### Startup
 
 Grab a Docker compose yaml that includes Kafka and Zookeeper.
